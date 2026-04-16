@@ -17,12 +17,12 @@ def _gemini_model_name() -> str:
 
 
 def _gemini_api_key() -> str | None:
-    return os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
+    return os.environ.get("GOOGLE_API_KEY")
 
 
 pytestmark = pytest.mark.skipif(
     not _gemini_api_key(),
-    reason="GEMINI_API_KEY or GOOGLE_API_KEY is required for DeepEval MCP metrics",
+    reason="GOOGLE_API_KEY is required for DeepEval MCP metrics",
 )
 
 
